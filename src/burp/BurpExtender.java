@@ -11,6 +11,12 @@ public class BurpExtender implements IBurpExtender
         callbacks.registerIntruderPayloadGeneratorFactory(new CPFGenerator(true));
         callbacks.registerIntruderPayloadGeneratorFactory(new CNPJGenerator(false));
         callbacks.registerIntruderPayloadGeneratorFactory(new CNPJGenerator(true));
+        callbacks.registerIntruderPayloadGeneratorFactory(new CarPlateGenerator(false));
+        callbacks.registerIntruderPayloadGeneratorFactory(new CarPlateGenerator(true));
+        callbacks.registerIntruderPayloadGeneratorFactory(new BrNameGenerator(false, true));
+        callbacks.registerIntruderPayloadGeneratorFactory(new BrNameGenerator(false, false));
+        callbacks.registerIntruderPayloadGeneratorFactory(new BrNameGenerator(true, true));
+        callbacks.registerIntruderPayloadGeneratorFactory(new BrNameGenerator(true, false));
         //Passive Scan
         callbacks.registerScannerCheck(new PassiveScanCPF(callbacks));
     }
